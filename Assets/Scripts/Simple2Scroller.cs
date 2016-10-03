@@ -4,14 +4,16 @@ using System.Collections;
 public class Simple2Scroller : MonoBehaviour {
 
     public int scrollingSpeed = 1;
-    public SpriteRenderer pictureOne;
-    public SpriteRenderer pictureTwo;
+
+    [SerializeField]
     private PictureScroll scrollOne;
+
+    [SerializeField]
     private PictureScroll scrollTwo;
 
     void Awake() {
-        scrollOne = new PictureScroll(pictureOne);
-        scrollTwo = new PictureScroll(pictureTwo);
+        scrollOne.Init();
+        scrollTwo.Init();
     }
 
     void Update() {
@@ -31,11 +33,11 @@ public class Simple2Scroller : MonoBehaviour {
     }
 
     void ResetPos(PictureScroll pic, PictureScroll otherPic) {
-        if (otherPic.isOutOfBounds(false)) {
+        if (otherPic.IsOutOfBounds(false)) {
             var resetPos = otherPic.transform.position.x - otherPic.halfImageWidth - pic.halfImageWidth;
             pic.transform.position = new Vector3(resetPos, pic.transform.position.y, pic.transform.position.z);
         }
-        else if (otherPic.isOutOfBounds()) {
+        else if (otherPic.IsOutOfBounds()) {
             var resetPos = otherPic.transform.position.x + otherPic.halfImageWidth + pic.halfImageWidth;
             pic.transform.position = new Vector3(resetPos, pic.transform.position.y, pic.transform.position.z);
         }

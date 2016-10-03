@@ -1,14 +1,18 @@
 ﻿using UnityEngine;
 
+[System.Serializable]
 public class PictureScroll {
     public SpriteRenderer sprite;
+
+    [HideInInspector]
     public Transform transform;
+
+    [HideInInspector]
     public float halfImageWidth;
 
-    private readonly float halfCamWidth;
+    private float halfCamWidth;
 
-    public PictureScroll(SpriteRenderer spriteRenderer) {
-        sprite = spriteRenderer;
+    public void Init() {
         transform = sprite.transform;
 
         var imageWidth = sprite.bounds.size.x;
@@ -20,7 +24,7 @@ public class PictureScroll {
         halfCamWidth = camWidth / 2.0f;
     }
 
-    public bool isOutOfBounds(bool rightEdge = true) {
+    public bool IsOutOfBounds(bool rightEdge = true) {
         float edgeX = 0.0f;
 
         if (rightEdge) {
