@@ -1057,8 +1057,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scrollingSpeed: 1
-  pictureOne: {fileID: 612893470}
-  pictureTwo: {fileID: 1806611318}
+  scrollOne:
+    sprite: {fileID: 823565635}
+    transform: {fileID: 0}
+    halfImageWidth: 0
+  scrollTwo:
+    sprite: {fileID: 90212874}
+    transform: {fileID: 0}
+    halfImageWidth: 0
 --- !u!114 &1266575201
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1071,8 +1077,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scrollingSpeed: 3
-  pictureOne: {fileID: 823565635}
-  pictureTwo: {fileID: 90212874}
+  scrollOne:
+    sprite: {fileID: 612893470}
+    transform: {fileID: 0}
+    halfImageWidth: 0
+  scrollTwo:
+    sprite: {fileID: 1806611318}
+    transform: {fileID: 0}
+    halfImageWidth: 0
 --- !u!4 &1266575202
 Transform:
   m_ObjectHideFlags: 0
